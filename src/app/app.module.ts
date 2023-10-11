@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 //import { CVTemplateComponent } from './CV-template/CV-template.component';
 import{AppRoutingModule} from './app-routing.module';
 import { homeComponent } from './home/home.component';
+import { profiloComponent } from './profilo/profilo.component';
+
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { homeComponent } from './home/home.component';
   declarations: [
     AppComponent,
    // CVTemplateComponent
-   homeComponent
+   homeComponent,
+   profiloComponent
   ],
   bootstrap: [
     AppComponent
