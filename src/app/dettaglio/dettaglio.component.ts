@@ -14,7 +14,7 @@ drinks: any = [];
      
        ngOnInit(): void {
  
-         this.http.get('http://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=15200').subscribe( ( res: any) => {
+         this.http.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=15200').subscribe( ( res: any) => {
  
            // this.drinks = response
            console.log(res);
