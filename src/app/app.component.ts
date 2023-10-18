@@ -8,24 +8,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit{
 
-      // sara un Array con un interfaccia di tipo fattura fatture: fattura = []
-
       constructor() {}
-
-      /*constructor(private http : HttpClient) {}*/
     
-      ngOnInit(): void { // non tutte le chiamate vanno fatte qui solo quelle che voglio mostrare all'inizion--> ON INIT
+      ngOnInit(): void {
 
-        /*
-        this.http.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a').subscribe( ( response: any) => {
-
-          // this.drinks = response
-          console.log(response);
-          this.drinks = response.drinks;
-*/
-        }
+        
        
       }
+    }
 	
 	
 	

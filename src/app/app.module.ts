@@ -20,7 +20,6 @@ import { HttpClientModule } from '@angular/common/http'; // richieste a backend
   ],
   declarations: [
     AppComponent, 
-   // CVTemplateComponent
    homeComponent,
    dettaglioComponent
   ],
