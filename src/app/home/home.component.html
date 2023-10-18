@@ -1,13 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-  <h1>HOME</h1>
-  <a routerLink ="/profilo">PROFILO</a>
-</body>
-</html>
+
+
+<div class="container-fluid bg-black"> 
+
+<ul>
+    <li *ngFor="let drinks of drinks" class="linea testo-giustificato"> 
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" [src]="drinks.strDrinkThumb"/>
+            <div class="card-body">
+              <h3 class="card-title">{{drinks.idDrink}}</h3>
+              <h2 class="card-text orange">  {{drinks.strDrink}}</h2>
+             
+              <button class="button-style">  <a routerLink ="/dettaglio" class="text-light">Dettaglio Drink</a> </button>
+            </div>
+          </div>
+
+
+<!--  
+          {{drinks.idDrink}} <br>
+          {{drinks.strDrink}} <br>
+          {{drinks.strDrinkThumb}} <br>
+          <img width="50" height="50" [src]="drinks.strDrinkThumb"/>
+ -->
+    </li>
+</ul>
+</div>

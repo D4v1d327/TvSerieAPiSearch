@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 //import { CVTemplateComponent } from './CV-template/CV-template.component';
 import{AppRoutingModule} from './app-routing.module';
 import { homeComponent } from './home/home.component';
-import { profiloComponent } from './profilo/profilo.component';
+import { dettaglioComponent } from './dettaglio/dettaglio.component';
+import { HttpClientModule } from '@angular/common/http'; // richieste a backend
 
 
 
@@ -14,13 +15,14 @@ import { profiloComponent } from './profilo/profilo.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   declarations: [
-    AppComponent,
+    AppComponent, 
    // CVTemplateComponent
    homeComponent,
-   profiloComponent
+   dettaglioComponent
   ],
   bootstrap: [
     AppComponent

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 import { homeComponent } from './home/home.component';
-import { profiloComponent } from './profilo/profilo.component';
+import { dettaglioComponent } from './dettaglio/dettaglio.component';
 
 const routes: Routes = [
     { path: 'home', component: homeComponent },
     { path: '',   redirectTo: '/home', pathMatch: 'full' },
-    { path: 'profilo', component: profiloComponent},
+    { path: 'dettaglio', component: dettaglioComponent},
 
 ]; // sets up routes constant where you define your routes
 
