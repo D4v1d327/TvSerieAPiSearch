@@ -1,26 +1,26 @@
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 <div class="container-fluid bg-black"> 
-  <h1 class="orange"> ELENCO DRINK PER LETTERA A</h1>
+  <h1 class="orange text-center"> ELENCO DRINK PER LETTERA A</h1>
 
-<ul>
-    <li *ngFor="let drinks of drinks" class="linea testo-giustificato"> 
+  <ul class="row">
+      <li *ngFor="let drinks of drinks" class="linea testo-giustificato text-center col-lg-3 "> 
 
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" [src]="drinks.strDrinkThumb"/>
-            <div class="card-body">
-              <h3 class="card-title">{{drinks.idDrink}}</h3>
-              <h2 class="card-text orange">  {{drinks.strDrink}}</h2>
-             
-              <button class="button-style">  <a routerLink ="/dettaglio" class="text-light">Dettaglio Drink</a> </button>
+          <div class="card " style="width: 18rem;">
+              <img class="card-img-top" [src]="drinks.strDrinkThumb"/>
+              <div class="card-body">
+                <h3 class="card-text">ID DRINK: {{drinks.idDrink}}</h3>
+                <h2 class="card-text orange">Nome: {{drinks.strDrink}}</h2>
+              
+                <button class="button-style">  <a routerLink ="/dettaglio" class="text-light">Dettaglio Drink</a> </button>
+              </div>
             </div>
-          </div>
-<!--  
-          {{drinks.idDrink}} <br>
-          {{drinks.strDrink}} <br>
-          {{drinks.strDrinkThumb}} <br>
-          <img width="50" height="50" [src]="drinks.strDrinkThumb"/>
- -->
-    </li>
-</ul>
+  <!--  
+            {{drinks.idDrink}} <br>
+            {{drinks.strDrink}} <br>
+            {{drinks.strDrinkThumb}} <br>
+            <img width="50" height="50" [src]="drinks.strDrinkThumb"/>
+  -->
+      </li>
+  </ul>
 </div>
