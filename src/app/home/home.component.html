@@ -6,21 +6,14 @@
   <ul class="row">
       <li *ngFor="let drinks of drinks" class="linea testo-giustificato text-center col-lg-3 "> 
 
-          <div class="card " style="width: 18rem;">
-              <img class="card-img-top" [src]="drinks.strDrinkThumb"/>
+          <div class="card " style="width: 18rem;"  routerLink ="/dettaglio">
+              <img  class="card-img-top" [src]="drinks.strDrinkThumb"/>
               <div class="card-body">
                 <h3 class="card-text">ID DRINK: {{drinks.idDrink}}</h3>
                 <h2 class="card-text orange">Nome: {{drinks.strDrink}}</h2>
-              
                 <button class="button-style">  <a routerLink ="/dettaglio" class="text-light">Dettaglio Drink</a> </button>
               </div>
-            </div>
-  <!--  
-            {{drinks.idDrink}} <br>
-            {{drinks.strDrink}} <br>
-            {{drinks.strDrinkThumb}} <br>
-            <img width="50" height="50" [src]="drinks.strDrinkThumb"/>
-  -->
+          </div>
       </li>
   </ul>
 </div>

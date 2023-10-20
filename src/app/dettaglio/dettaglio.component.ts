@@ -19,7 +19,6 @@ drinks: any = [];
            // this.drinks = response
            console.log(res);
            this.drinks = res.drinks;
- 
          })
 }
 }

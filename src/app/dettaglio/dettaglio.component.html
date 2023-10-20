@@ -10,12 +10,21 @@
   <h1>DETTAGLIO DRINK</h1>
 
   <a [routerLink]="['/home']">HOME</a>
+
 <ul>
     <li *ngFor="let drinks of drinks" > 
 
         {{drinks.idDrink}} <br>
         {{drinks.strDrink}} <br>
-        {{drinks.strDrinkThumb}} <br>
+       <ul>  <h3> INGREDIENTI</h3>
+          <li>  {{drinks.strIngredient1}} </li> 
+          <li>  {{drinks.strIngredient2}} </li>
+          <li>  {{drinks.strIngredient3}} </li>
+          <li>  {{drinks.strIngredient4}} </li>
+       </ul>
+        {{drinks.strCategory}} <br>
+        {{drinks.strGlass}} <br>
+        {{drinks.strInstructionsIT}} <br>
         <img width="50" height="50" [src]="drinks.strDrinkThumb"/>
   </li>
 </ul>
