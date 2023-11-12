@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+    <body>
+      <h1 class="text-center">SEASONS AND EPISODES </h1>
+
+      <div class="container-fluid"> 
+        <div class="col text-center">
+          <button class="btn bg-dark m-2">  <a class="text-light"  [routerLink]="['/dettaglio' , id]">MAIN</a> </button> 
+          <button class="btn bg-dark m-2">  <a class="text-light"  [routerLink]="['/episodi', id]">EPISODES</a> </button>
+        </div>
+        <ul *ngFor="let episode of episodes">
+          <div class="row"> 
+            <div class="col-lg-6"> 
+              <img class="img-fluid" [src]="episode.image.original"/> <br>
+            </div>
+            <div class="col-lg-6">
+              <li>TITLE:  {{episode.name}}</li>
+              <li>SEASON: {{episode.season}}</li>
+              <li>EPISODE NUMBER: {{episode.number}}</li>
+              <li>RUNTIME: {{episode.runtime}} minutes</li>
+              <a [routerLink]="['/dettaglio' , id]">TORNA AL DETTAGLIO </a> <br>
+              <a [routerLink]="['/home']">HOME PAGE  </a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </body>
+</html>

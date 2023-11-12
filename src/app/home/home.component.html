@@ -1,19 +1,21 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-<div class="container-fluid bg-black"> 
-  <h1 class="orange text-center"> ELENCO DRINK PER LETTERA A</h1>
-
-  <ul class="row">
-      <li *ngFor="let drinks of drinks" class="linea testo-giustificato text-center col-lg-3 "> 
-
-          <div class="card " style="width: 18rem;"  routerLink ="/dettaglio">
-              <img  class="card-img-top" [src]="drinks.strDrinkThumb"/>
-              <div class="card-body">
-                <h3 class="card-text">ID DRINK: {{drinks.idDrink}}</h3>
-                <h2 class="card-text orange">Nome: {{drinks.strDrink}}</h2>
-                <button class="button-style">  <a routerLink ="/dettaglio" class="text-light">Dettaglio Drink: {{drinks.strDrink}}</a> </button>
-              </div>
+<div class="container-fluid text-center"> 
+  <h1 class="text-center p-5"> RICERCA SERIE TV PER TITOLO</h1>
+  <form  name="serieForm" class="m-auto"  (ngSubmit)="effettuaRicerca()">
+      <input type="text" name="serieTitle" [(ngModel)]="serieTitle" placeholder="serie title">
+      <button  class="btn m-2 button-style" (click)="searchSerie = true" >  Cerca Serie</button>
+      <ul class="row justify-content-center text-center" >
+        <li *ngFor="let serie of series" class="text-center col-lg-3 col-md-6 col-sm-6 p-2">
+          <div class="card " style="width: 18rem;">
+            <div class="card-body bg-dark" role="button"  [routerLink]="['/dettaglio', serie.show.id]">
+                <h4 class="card-text">{{serie.show.name}}</h4>
+                <img class="card-img-top img-fluid" [src]="serie.show.image.original" alt="Serie Image"/>
+                <p class="card-text ">Language: {{serie.show.language}}</p>
+                <button class="button-style" [routerLink]="['/dettaglio', serie.show.id]">Dettaglio Serie</button>
+            </div>
           </div>
-      </li>
-  </ul>
+        </li>
+      </ul>
+  </form>
 </div>

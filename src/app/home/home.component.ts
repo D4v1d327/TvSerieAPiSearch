@@ -1,34 +1,27 @@
- import { Component, OnInit } from '@angular/core';
- import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { serieService } from '../services/serieService';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+export class homeComponent {
+  series: any = [];
+  serieTitle: string = "";
+  searchSerie: boolean = false;
 
-export class homeComponent implements OnInit{
+  constructor(private serieService: serieService) {}
 
-  drinks : any = [] // sara un Array con un interfaccia di tipo fattura fatture: fattura = []
- 
-       //constructor() {}
- 
-       constructor(private http : HttpClient) {}
-     
-       ngOnInit(): void { // non tutte le chiamate vanno fatte qui solo quelle che voglio mostrare all'inizion--> ON INIT
- 
-         this.http.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a').subscribe( ( response: any) => {
- 
-           // this.drinks = response
-           console.log(response);
-           this.drinks = response.drinks;
- 
-         })
-        
-       }
- }
-   
-  
+  effettuaRicerca() {
+    this.serieService.getElencoSeries(this.serieTitle).subscribe((response: any) => {
+      this.series = response;
+      this.searchSerie = true;
+      console.log(response);
+    });
+  }
+}
+
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
