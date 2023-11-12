@@ -19,13 +19,14 @@
             <div class="col-lg-6"> 
               <img class="img-fluid" [src]="episode.image.original"/> <br>
             </div>
-            <div class="col-lg-6">
-              <li>TITLE:  {{episode.name}}</li>
-              <li>SEASON: {{episode.season}}</li>
-              <li>EPISODE NUMBER: {{episode.number}}</li>
-              <li>RUNTIME: {{episode.runtime}} minutes</li>
-              <a [routerLink]="['/dettaglio' , id]">TORNA AL DETTAGLIO </a> <br>
-              <a [routerLink]="['/home']">HOME PAGE  </a>
+            <div class="col-lg-6 text-center p-3 bg-dark text-light">
+                <h4>TITLE:  {{episode.name}}</h4>
+                <h3>SEASON: {{episode.season}}</h3>
+                <h3>EPISODE NUMBER: {{episode.number}}</h3>
+                <h3>RUNTIME: {{episode.runtime}} minutes</h3>
+                <a [routerLink]="['/dettaglio' , id]">TORNA AL DETTAGLIO </a> <br>
+                <a [routerLink]="['/home']">HOME PAGE  </a>
+                <p>{{episode.summary}}</p>
             </div>
           </div>
         </ul>

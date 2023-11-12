@@ -10,15 +10,16 @@
   
     <h1 class="text-center">DETTAGLIO SERIE</h1>
 
-    <a [routerLink]="['/home']">HOME</a>
+    
       <div class="container"> 
-        <div class="row"> 
+        <div class="row "> 
             <div class="col">    
                 <button class="btn bg-dark m-2">  <a class="text-light"  [routerLink]="['/dettaglio' , serie.id]">MAIN</a> </button> 
                 <button class="btn bg-dark m-2">  <a class="text-light"  [routerLink]="['/episodi', serie.id]"  >EPISODES</a> </button> 
+                <button class="btn bg-dark m-2 text-light"  [routerLink]="['/home']"> HOME</button>
            </div>
           <h2> {{serie.name}}</h2>
-          <div class="col-lg-4"> 
+          <div class="col-lg-4 col-md-4 col-sm-12 "> 
             <img class="img-fluid" [src]="serie.image.medium"/> <br>
           </div>  
 
@@ -37,8 +38,9 @@
                   <p>Show type: {{serie.type}}</p>
                   <p>Schedule: {{serie.schedule.days}}  {{serie.schedule.time}} </p>
                   <p>Status: {{serie.status}} </p>
-                  <p>Rating: {{serie.rating.average}} </p>
+                  <p>Rating: {{serie.rating.average}} <i class="bi bi-star-fill text-warning"></i>  </p>
                   <p>Genres: {{serie.genres}} </p>
+                  <p>Timezone: {{serie.network.country.timezone}}</p>
               </div>
           </div>  
         </div>
