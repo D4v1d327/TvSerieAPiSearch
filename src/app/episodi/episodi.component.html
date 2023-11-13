@@ -15,18 +15,17 @@
           <button class="btn bg-dark m-2">  <a class="text-light"  [routerLink]="['/episodi', id]">EPISODES</a> </button>
         </div>
         <ul *ngFor="let episode of episodes">
-          <div class="row"> 
+          <div class="row "> 
             <div class="col-lg-6"> 
               <img class="img-fluid" [src]="episode.image.original"/> <br>
             </div>
-            <div class="col-lg-6 text-center p-3 bg-dark text-light">
+            <div class="col-lg-6 text-center  p-5  bg-dark text-light">
                 <h4>TITLE:  {{episode.name}}</h4>
                 <h3>SEASON: {{episode.season}}</h3>
                 <h3>EPISODE NUMBER: {{episode.number}}</h3>
                 <h3>RUNTIME: {{episode.runtime}} minutes</h3>
-                <a [routerLink]="['/dettaglio' , id]">TORNA AL DETTAGLIO </a> <br>
-                <a [routerLink]="['/home']">HOME PAGE  </a>
-                <p>{{episode.summary}}</p>
+                
+                <p [innerHTML]=episode.summary ></p>
             </div>
           </div>
         </ul>
